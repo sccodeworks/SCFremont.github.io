@@ -2,6 +2,8 @@
    SC Fremont Website Styles
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@400;500;600;700;800&display=swap');
+
 /* Reset and Base Styles
    ========================================================================== */
 * {
@@ -12,22 +14,23 @@
 
 :root {
   /* Colors */
-  --primary-color: #2563eb;
-  --primary-hover: #1e40af;
-  --primary-light: #dbeafe;
-  --secondary-color: #64748b;
-  --secondary-hover: #475569;
+  --primary-color: #00a9df;
+  --primary-hover: #0090be;
+  --primary-light: #e0f5fc;
+  --secondary-color: #84b641;
+  --secondary-hover: #6f9a36;
+  --accent-dark: #172c59;
 
-  --text-dark: #1e293b;
-  --text-gray: #475569;
-  --text-light: #94a3b8;
+  --text-dark: #111212;
+  --text-gray: #555555;
+  --text-light: #808080;
 
   --border-color: #e2e8f0;
-  --bg-light: #f8fafc;
+  --bg-light: #f0f4f5;
   --bg-white: #ffffff;
-  --bg-dark: #0f172a;
+  --bg-dark: #172c59;
 
-  --success: #10b981;
+  --success: #84b641;
   --warning: #f59e0b;
   --error: #ef4444;
 
@@ -48,7 +51,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
   background: var(--bg-white);
@@ -63,6 +66,7 @@ body {
 /* Typography
    ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Josefin Sans', 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.3;
   color: var(--text-dark);
@@ -105,6 +109,21 @@ p { margin-bottom: 1rem; }
   font-weight: 800;
   color: var(--primary-color);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+}
+
+.logo-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #172c59;
 }
 
 .main-nav {
@@ -139,7 +158,7 @@ p { margin-bottom: 1rem; }
 /* Hero Sections
    ========================================================================== */
 .hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+  background: linear-gradient(135deg, var(--accent-dark) 0%, var(--primary-color) 100%);
   color: white;
   padding: 5rem 0;
   text-align: center;
@@ -260,6 +279,7 @@ p { margin-bottom: 1rem; }
   border-radius: 1rem;
   box-shadow: var(--shadow-md);
   transition: transform 0.2s, box-shadow 0.2s;
+  border-top: 4px solid var(--primary-color);
 }
 
 .service-card:hover {
@@ -289,10 +309,10 @@ p { margin-bottom: 1rem; }
 }
 
 .service-features li::before {
-  content: "✓";
+  content: "\2713";
   position: absolute;
   left: 0;
-  color: var(--success);
+  color: var(--secondary-color);
   font-weight: bold;
 }
 
@@ -323,7 +343,7 @@ p { margin-bottom: 1rem; }
 }
 
 .value-item h4 {
-  color: var(--primary-color);
+  color: var(--accent-dark);
   margin-bottom: 0.5rem;
 }
 
@@ -331,7 +351,7 @@ p { margin-bottom: 1rem; }
    ========================================================================== */
 .stats-section {
   padding: var(--section-padding);
-  background: var(--primary-color);
+  background: linear-gradient(135deg, var(--accent-dark) 0%, var(--primary-color) 100%);
   color: white;
   text-align: center;
 }
@@ -453,7 +473,7 @@ p { margin-bottom: 1rem; }
 }
 
 .property-type-card h3 {
-  color: var(--primary-color);
+  color: var(--accent-dark);
   margin-bottom: 1rem;
 }
 
@@ -563,7 +583,7 @@ p { margin-bottom: 1rem; }
 /* Highlight Banner
    ========================================================================== */
 .highlight-banner {
-  background: linear-gradient(135deg, var(--primary-color), #1e40af);
+  background: linear-gradient(135deg, var(--accent-dark), var(--primary-color));
   color: white;
   padding: 3rem 0;
 }
@@ -685,7 +705,7 @@ p { margin-bottom: 1rem; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  /* margin-top: 3rem; */
+  margin-top: 3rem;
 }
 
 .process-step {
@@ -733,7 +753,7 @@ p { margin-bottom: 1rem; }
 }
 
 .req-card h3 {
-  color: var(--primary-color);
+  color: var(--accent-dark);
   margin-bottom: 1rem;
 }
 
@@ -800,6 +820,7 @@ p { margin-bottom: 1rem; }
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
+  border-top: 3px solid var(--primary-color);
 }
 
 .value-card h3 {
@@ -991,7 +1012,7 @@ form select:focus,
 form textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 169, 223, 0.15);
 }
 
 form textarea {
@@ -1024,9 +1045,28 @@ form button[type="submit"] {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-logo img {
+  height: 35px;
+  width: auto;
+}
+
+.footer-logo span {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
 }
 
 .footer-col h4 {
